@@ -9,9 +9,9 @@ void Technician::init()
     _num = _startNumber++;
     _level = 1;
     _moneyPerHour = 100;
-    cout<<"please input the name of the Technician     :"<<endl;
+    cout<<"please input the name of the Technician     :";
     cin>>_name;
-    cout<<"please input the amount of the hours of work:"<<endl;
+    cout<<"please input the amount of the hours of work:";
     cin>>_amountHour;
 }
 
@@ -31,4 +31,5 @@ void Technician::disInfo()
     cout<<"the amount of the hours of work:"<<_amountHour<<endl;
     cout<<"money per hour                 :"<<_moneyPerHour<<endl;
     cout<<"total salary                   :"<<_salary<<endl;
+    cout<<"--------------------------------------------------"<<endl;
 }

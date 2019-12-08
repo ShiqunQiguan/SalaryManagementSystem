@@ -3,6 +3,7 @@
 #include "manager.h"
 #include "salesman.h"
 #include "salesmanager.h"
+#include <typeinfo>
 
 using namespace std;
 
@@ -34,9 +35,21 @@ int main()
 
     Employee * empArr [] = {new manager, new Technician, new salesman, new salesmanager};
 
-    for(auto emp:empArr)
+    Employee *emp;
+    manager *pm;
+
+    for(int i=0; i<sizeof (empArr)/sizeof (*empArr); i++)
     {
+        emp = empArr[i];
         emp->init();
+        if(typeid (*emp) == typeid (manager))
+        {
+            cout<<"the Manager want to increase the salary"<<endl;
+            if(pm = dynamic_cast<manager*>(emp))
+            {
+                pm->addSalary(2000);
+            }
+        }
         emp->promote();
         emp->calcSalary();
         emp->disInfo();

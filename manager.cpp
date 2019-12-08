@@ -10,8 +10,9 @@ void manager::init()
     _fixedSalary = 8000;
     _num = _startNumber++;
     _level = 1;
-    cout<<"please input the name of the manager     :"<<endl;
+    cout<<"please input the name of the Manager     :";
     cin>>_name;
+    _salary = 0;
 }
 
 void manager::promote()
@@ -20,7 +21,7 @@ void manager::promote()
 }
 void manager::calcSalary()
 {
-    _salary = _fixedSalary;
+    _salary += _fixedSalary;
 }
 void manager::disInfo()
 {
@@ -28,4 +29,9 @@ void manager::disInfo()
     cout<<"number                         :"<<_num<<endl;
     cout<<"level                          :"<<_level<<endl;
     cout<<"total salary                   :"<<_salary<<endl;
+    cout<<"--------------------------------------------------"<<endl;
+}
+void manager::addSalary(float money)
+{
+    _salary += money;
 }

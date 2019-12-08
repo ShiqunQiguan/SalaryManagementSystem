@@ -11,6 +11,9 @@ public:
     virtual void promote();
     virtual void calcSalary();
     virtual void disInfo();
+
+    void addSalary(float money);
+
 protected:
     int _fixedSalary;
 
